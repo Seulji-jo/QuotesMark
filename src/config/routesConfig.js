@@ -1,8 +1,9 @@
-import React from 'react';
-import Layout from '../layouts';
-import KoreanQuotes from '../pages/KoreanQuotes';
-import EnglishQuotes from '../pages/EnglishQuotes';
+import React, { lazy } from 'react';
 import { Navigate } from 'react-router-dom';
+
+const Layout = lazy(() => import('../layouts'));
+const KoreanQuotes = lazy(() => import('../pages/KoreanQuotes'));
+const EnglishQuotes = lazy(() => import('../pages/EnglishQuotes'));
 
 const routesConfig = [
   {
