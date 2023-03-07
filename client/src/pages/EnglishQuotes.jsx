@@ -1,20 +1,21 @@
-import React, { useEffect } from 'react';
-import { fetchQuotes } from '../services';
+import React from 'react';
+import useQuotes from '../hooks/useQuotes';
 
 function EnglishQuotes() {
-  useEffect(() => {
-    async function getEngQuotesData() {
-      const params = {
-        method: 'getQuote',
-        lang: 'en',
-        format: 'json',
-      };
-      const res = await fetchQuotes(params);
-      console.log(res);
-    }
-    getEngQuotesData();
-  }, []);
-  return <div>English Quotes</div>;
+  const params = {
+    method: 'getQuote',
+    lang: 'en',
+    format: 'json',
+  };
+  const { quotesData } = useQuotes(params);
+  const { quoteAuthor, quoteText } = quotesData;
+
+  return (
+    <>
+      <div>{quoteAuthor}</div>
+      <p>{quoteText}</p>
+    </>
+  );
 }
 
 export default EnglishQuotes;

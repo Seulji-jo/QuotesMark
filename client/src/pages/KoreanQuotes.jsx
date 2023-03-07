@@ -1,18 +1,18 @@
-import React, { useEffect } from 'react';
-import { fetchQuotes } from '../services';
+import React from 'react';
+import useQuotes from '../hooks/useQuotes';
 
 function KoreanQuotes() {
-  useEffect(() => {
-    async function getKorQuotesData() {
-      const param = {
-        apikey: 'guest',
-      };
-      const res = await fetchQuotes(param);
-      console.log(res);
-    }
-    getKorQuotesData();
-  });
-  return <div>Korean Quotes</div>;
+  const params = {
+    apikey: 'guest',
+  };
+  const { quotesData } = useQuotes(params);
+  const { quoteAuthor, quoteText } = quotesData;
+  return (
+    <>
+      <div>{quoteAuthor}</div>
+      <p>{quoteText}</p>
+    </>
+  );
 }
 
 export default KoreanQuotes;
