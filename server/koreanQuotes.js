@@ -1,11 +1,10 @@
 const axios = require('axios');
 
 module.exports = async(req, res) => {
-    const {data} = await axios.get(
+    const { data } = await axios.get(
       `https://api.qwer.pw/request/helpful_text`, 
       {params: req.query}
     );
-    console.log(data)
     
     if (data[0].result === 'error') {
       const errMsg = {
@@ -14,11 +13,11 @@ module.exports = async(req, res) => {
       }
       return res.status(400).send(errMsg[data[1].respond.code] ?? 'check your request');
     }
-
-    const quotesWithAuthor = data[1].respond.split(' - ');
+    
+    const quotesWithAuthor = data[1].respond.split(/[\-\–]/);
     const quotesData = {
-      quoteText: quotesWithAuthor[0], 
-      quoteAuthor: quotesWithAuthor[1]
+      quoteText: quotesWithAuthor[0].trimEnd(), 
+      quoteAuthor: quotesWithAuthor[1]?.trim()
     };
 
     return res.status(200).send(JSON.stringify(quotesData));
