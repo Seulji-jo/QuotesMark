@@ -9,8 +9,8 @@ function KoreanQuotes() {
   const { quoteAuthor, quoteText } = quotesData;
   return (
     <>
-      <div>{quoteAuthor}</div>
-      <p>{quoteText}</p>
+      <div className="author">{quoteAuthor}</div>
+      <p className="quotes">{quoteText}</p>
     </>
   );
 }

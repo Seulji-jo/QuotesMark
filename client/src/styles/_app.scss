@@ -1,0 +1,133 @@
+@import '../assets/fonts/roboto.css';
+@import '../assets/fonts/pretendard.css';
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+#root {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+
+  color: $c-black;
+  background-color: $bg-color;
+}
+
+.App {
+  width: 1280px;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 70px 1fr 70px;
+  grid-template-areas: 
+    "h h h h h h h h h h h h"
+    ". m m m m m m m m m m ."
+    ". f f f f f f f f f f .";
+  gap: 40px;
+
+  align-items: center;
+  justify-content: center;
+  
+  font-family: 'Roboto', 'Pretendard', sans-serif;
+}
+
+.header {
+  grid-area: h;
+
+  display: flex;
+  justify-content: space-between;
+
+  nav {
+    .active {
+      color: $primary-color;
+    }
+    ul {
+      height: 100%;
+      display: flex;
+      li {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        &:has(.active) {
+          border-bottom: 1px solid $primary-color;
+        }
+      }
+      & > * + * {
+        margin-left: 40px;
+      }
+    }
+  }
+}
+.main {
+  grid-area: m;
+
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-areas: 
+    "author author author author quotes quotes quotes quotes quotes quotes";
+  gap: 40px;
+  .author {
+    grid-area: author;
+    
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: ". line";
+    gap: 40px;
+    align-items: center;
+    justify-items: end;
+    // &-name{
+    //   grid-area: name;
+    // }
+    &::after {
+      grid-area: line;
+      content: '';
+      display: inline-block;
+      width: 100%;
+      height: 1px;
+      background-color: $primary-color;
+    }
+  }
+  .quotes {
+    grid-area: quotes;
+
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 54px;
+    word-break: keep-all;
+  }
+}
+.footer {
+  grid-area: f;
+
+  height: 100%;
+  padding: {
+    left: 40px;
+    right: 40px;
+  }
+  display: flex;
+  justify-content: flex-end;
+  background-color: $secondary-color;
+  
+  button {
+    display: flex;
+    align-items: center;
+    padding: 5px 0;
+    color: $c-white;
+    svg {
+      padding-left: 5px;
+    }
+  }
+}

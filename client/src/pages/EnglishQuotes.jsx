@@ -12,8 +12,8 @@ function EnglishQuotes() {
 
   return (
     <>
-      <div>{quoteAuthor}</div>
-      <p>{quoteText}</p>
+      <div className="author">{quoteAuthor}</div>
+      <p className="quotes">{quoteText}</p>
     </>
   );
 }

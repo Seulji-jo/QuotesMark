@@ -4,9 +4,9 @@ import { NavLink } from 'react-router-dom';
 import { ReactComponent as Logo } from '../assets/Logo.svg';
 
 function Header() {
-  let activeClassName = 'underline';
+  let activeClassName = 'active';
   return (
-    <header>
+    <header className="header">
       <Logo />
       <nav>
         <ul>

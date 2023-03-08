@@ -48,7 +48,15 @@ table {
 }
 
 
+/* custom reset */
 a {
   color: inherit;
   text-decoration: inherit;
+
+	display: inline-block;
+}
+button{
+	background-color: transparent;
+	border-width: 0;
+	cursor: pointer;
 }
