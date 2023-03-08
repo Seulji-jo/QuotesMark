@@ -6,7 +6,9 @@ module.exports = async({query}, res) => {
       {params: query}
     );
 
-    if (typeof data === 'string') return res.status(400).send(data);
+    if (typeof data === 'string') {
+      return res.status(400).send(data);
+    }
 
     const quotesData = {
       quoteText: data.quoteText.trimEnd(),

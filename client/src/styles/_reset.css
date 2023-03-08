@@ -49,6 +49,9 @@ table {
 
 
 /* custom reset */
+body {
+	box-sizing: border-box;
+}
 a {
   color: inherit;
   text-decoration: inherit;
