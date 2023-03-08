@@ -1,13 +1,8 @@
 import React from 'react';
-import useQuotes from '../hooks/useQuotes';
+import { useQuotesContext } from '../context/useQuotesContext';
 
 function EnglishQuotes() {
-  const params = {
-    method: 'getQuote',
-    lang: 'en',
-    format: 'json',
-  };
-  const { quotesData } = useQuotes(params);
+  const { quotesData } = useQuotesContext();
   const { quoteAuthor, quoteText } = quotesData;
 
   return (

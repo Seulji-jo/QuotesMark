@@ -1,11 +1,8 @@
 import React from 'react';
-import useQuotes from '../hooks/useQuotes';
+import { useQuotesContext } from '../context/useQuotesContext';
 
 function KoreanQuotes() {
-  const params = {
-    apikey: 'guest',
-  };
-  const { quotesData } = useQuotes(params);
+  const { quotesData } = useQuotesContext();
   const { quoteAuthor, quoteText } = quotesData;
   return (
     <>
