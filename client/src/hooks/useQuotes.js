@@ -15,7 +15,6 @@ function useQuotes() {
   };
 
   const pathname = useLocation().pathname.slice(1);
-  console.log(pathname);
   const [quotesData, setQuotesData] = useState({
     quoteText: '',
     quoteAuthor: '',
@@ -23,13 +22,12 @@ function useQuotes() {
 
   const getQuotesData = async () => {
     const { data } = await fetchQuotes(queries[pathname]);
-    console.log(data);
     setQuotesData(data);
   };
 
   useEffect(() => {
     setQuotesData({ quoteText: '', quoteAuthor: '' });
-    getQuotesData();
+    if (pathname) getQuotesData();
   }, [pathname]);
 
   return { quotesData, getQuotesData };
