@@ -26,12 +26,27 @@ function Main() {
     document.body.removeChild(downloadLink);
   };
 
+  const copyQuotes = async () => {
+    const quotes = `${quotesData.quoteText} -${quotesData.quoteAuthor}=`;
+
+    if (navigator.clipboard) {
+      try {
+        await navigator.clipboard.writeText(quotes);
+        alert('클립보드에 복사되었습니다.');
+      } catch (error) {
+        alert('복사를 다시 시도해 주세요');
+      }
+    } else {
+      alert('복사가 지원되지 않는 브라우저입니다.');
+    }
+  };
+
   return (
     <Quotes value={{ quotesData, getQuotesData }}>
       <main className="main">
         <Outlet />
       </main>
-      <Footer captureQuotes={captureQuotes} />
+      <Footer captureQuotes={captureQuotes} copyQuotes={copyQuotes} />
     </Quotes>
   );
 }

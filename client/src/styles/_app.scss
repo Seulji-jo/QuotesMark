@@ -122,7 +122,10 @@ code {
   justify-content: space-between;
   align-items: center;
   background-color: $secondary-color;
-  
+  .btn-wrapper {
+    display: flex;
+    gap: 20px;
+  }
   button {
     display: flex;
     align-items: center;
