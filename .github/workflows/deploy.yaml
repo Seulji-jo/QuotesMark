@@ -8,8 +8,9 @@ jobs:
   deploy:
     name: Build, Deploy to S3 bucket
     runs-on: [ubuntu-latest]
-    env:
-      working-directory: ./client
+    defaults:
+      run:
+        working-directory: ./client
 
     strategy:
       matrix:
@@ -25,11 +26,15 @@ jobs:
 
       - name: Npm install
         run: npm install
-        working-directory: ${{env.working-directory}}
 
       - name: Build
         run: npm run build
-        working-directory: ${{env.working-directory}}
+
+      - name: Find a build dir
+        run: ls -la
+      
+      - name: print working dir
+        run: pwd
 
       - name: Deploy
         env:
