@@ -11,18 +11,18 @@ function Footer({ captureQuotes, copyQuotes }) {
     <footer className="footer">
       <div className="btn-wrapper">
         <button onClick={captureQuotes}>
-          {/* <ImportIcon /> */}
-          <img src={ImportIcon} alt="capture Quotes" />
+          <ImportIcon />
+          {/* <img src={ImportIcon} alt="capture Quotes" /> */}
         </button>
         <button onClick={copyQuotes}>
-          {/* <CopyIcon /> */}
-          <img src={CopyIcon} alt="copy Quotes" />
+          <CopyIcon />
+          {/* <img src={CopyIcon} alt="copy Quotes" /> */}
         </button>
       </div>
       <button onClick={getQuotesData}>
         NEXT
-        {/* <NextIcon /> */}
-        <img src={NextIcon} alt="next Quotes" />
+        <NextIcon />
+        {/* <img src={NextIcon} alt="next Quotes" /> */}
       </button>
     </footer>
   );
