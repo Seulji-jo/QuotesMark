@@ -45,4 +45,4 @@ jobs:
           aws s3 cp \
             --recursive \
             --region ap-northeast-2 \
-            s3://quotesmark
+            build s3://quotesmark
