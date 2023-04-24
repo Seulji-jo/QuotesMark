@@ -7,7 +7,7 @@ on:
 jobs:
   deploy:
     name: Build, Deploy to S3 bucket
-    runs-on: [macos-11]
+    runs-on: [ubuntu-latest]
     env:
       working-directory: ./client
 
