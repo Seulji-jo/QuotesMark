@@ -1,7 +1,7 @@
 import React from 'react';
-import NextIcon from '../assets/icon/next_icon.svg';
-import ImportIcon from '../assets/icon/Import_light.svg';
-import CopyIcon from '../assets/icon/Copy_light.svg';
+import { ReactComponent as ImportIcon } from '../assets/icon/Import_light.svg';
+import { ReactComponent as CopyIcon } from '../assets/icon/Copy_light.svg';
+import { ReactComponent as NextIcon } from '../assets/icon/Next_icon.svg';
 
 import { useQuotesContext } from '../context/useQuotesContext';
 
