@@ -40,3 +40,4 @@ jobs:
             --recursive \
             --region ap-northeast-2 \
             dist s3://quotesmark
+        working-directory: ${{env.working-directory}}
