@@ -11,7 +11,7 @@ const instance = axios.create(axiosConfig);
 instance.interceptors.request.use(
   config => {
     const pathName = window.location.pathname.slice(1);
-    config.baseURL = `http://localhost:8000/${pathName}`;
+    config.baseURL = pathName;
     return config;
   },
   err => Promise.reject(err)

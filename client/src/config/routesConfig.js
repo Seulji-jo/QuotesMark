@@ -14,7 +14,7 @@ const routesConfig = [
     children: [
       {
         index: true,
-        element: <Navigate to="/kr" replace />,
+        element: <Navigate to="/en" replace />,
       },
       {
         path: 'kr',
